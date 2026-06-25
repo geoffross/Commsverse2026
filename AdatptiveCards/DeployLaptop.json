@@ -1,0 +1,77 @@
+{
+    "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.4",
+    "body": [
+        {
+            "type": "Container",
+            "style": "accent",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "Device Deployment",
+                    "weight": "Bolder",
+                    "size": "Large",
+                    "color": "Dark"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Please deploy a Laptop from the stock room.",
+                    "size": "Small",
+                    "color": "Dark",
+                    "isSubtle": true,
+                    "spacing": "None"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Laptop type: {{LaptopType}}",
+                    "size": "Small",
+                    "color": "Dark",
+                    "isSubtle": true,
+                    "spacing": "None"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Request Id {{RequestId}}",
+                    "size": "Small",
+                    "color": "Dark",
+                    "isSubtle": true,
+                    "spacing": "None"
+                }
+            ],
+            "bleed": true
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "🏷️ Enter the Asset Tag of the device deployed",
+                    "weight": "Bolder",
+                    "size": "Small",
+                    "color": "Accent"
+                },
+                {
+                    "type": "Input.ChoiceSet",
+                    "id": "assetTag",
+                    "placeholder": "Start Typing...",
+                    "maxLength": 20,
+                    "choices": {{choices}},
+                    "isRequired": true
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "id": "deployAction",
+            "data": {
+                "action": "deploy"
+            },
+            "style": "positive",
+            "title": "Deploy"
+        }
+    ]
+}

@@ -1,0 +1,91 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.4",
+    "body": [
+        {
+            "type": "Container",
+            "style": "accent",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "New Employee Onboarding Request",
+                    "weight": "Bolder",
+                    "size": "Large",
+                    "color": "Dark"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Which systems does the employee need access to?",
+                    "size": "Small",
+                    "color": "Dark",
+                    "isSubtle": true,
+                    "spacing": "None"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Employee Name: {{EmployeeName}}",
+                    "size": "Small",
+                    "color": "Dark",
+                    "isSubtle": true,
+                    "spacing": "None"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Request Id {{RequestId}}",
+                    "size": "Small",
+                    "color": "Dark",
+                    "isSubtle": true,
+                    "spacing": "None"
+                }
+            ],
+            "bleed": true
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "Input.ChoiceSet",
+                    "id": "systemAccess",
+                    "isMultiSelect": true,
+                    "style": "expanded",
+                    "spacing": "Medium",
+                    "isRequired": true,
+                    "errorMessage": "Please select at least one system.",
+                    "choices": [
+                        {
+                            "title": "Dynamics 365",
+                            "value": "dynamics"
+                        },
+                        {
+                            "title": "Tikit",
+                            "value": "tikit"
+                        },
+                        {
+                            "title": "Stripe",
+                            "value": "stripe"
+                        },
+                        {
+                            "title": "GitHub",
+                            "value": "github"
+                        },
+                        {
+                            "title": "Azure",
+                            "value": "azure"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Submit",
+            "style": "positive",
+            "data": {
+                "action": "submitSystemAccess"
+            }
+        }
+    ]
+}

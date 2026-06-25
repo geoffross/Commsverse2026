@@ -1,0 +1,55 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.4",
+    "body": [
+        {
+            "type": "Container",
+            "style": "accent",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "New Employee Onboarding Request",
+                    "weight": "Bolder",
+                    "size": "Large",
+                    "color": "Dark"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Please add this new employee to HR system and confirm once done",
+                    "size": "Small",
+                    "color": "Dark",
+                    "isSubtle": true,
+                    "spacing": "None"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Employee Name: {{EmployeeName}}",
+                    "size": "Small",
+                    "color": "Dark",
+                    "isSubtle": true,
+                    "spacing": "None"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Request Id {{RequestId}}",
+                    "size": "Small",
+                    "color": "Dark",
+                    "isSubtle": true,
+                    "spacing": "None"
+                }
+            ],
+            "bleed": true
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Done",
+            "style": "positive",
+            "data": {
+                "action": "submitDone"
+            }
+        }
+    ]
+}
